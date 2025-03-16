@@ -14,11 +14,9 @@ function Header({ setIsLogedIn, isLogedIn }) {
 
   function popUP() {
     setIsLogedIn(prev => !prev)
-    console.log(isLogedIn)
   }
 
   const logout = () => {
-    console.log( "hahhahaahha => ",document.cookie)
     axios.get('http://localhost:8000/api/v1/users/logout', {
       headers: {
         'Authorization': `Bearer ${accessToken}`

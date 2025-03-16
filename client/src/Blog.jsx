@@ -21,7 +21,6 @@ const [accessData, setAccessData] = useState(localStorage.getItem('blogs') ? JSO
    useEffect(() => {
     axios.get('http://localhost:8000/api/v1/users/get-all-blogs')
     .then((res) => {
-        console.log(res.data.data)
         setAccessData(res.data.data)
         localStorage.setItem('blogs', JSON.stringify(res.data.data))
     })

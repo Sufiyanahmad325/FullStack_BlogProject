@@ -24,11 +24,6 @@ function Blog() {
 
 
 
-  console.log("this is your blogs data ", accessData.blogs)
-
-
-
-
 
   const uploadNewBlog = () => {
 
@@ -57,7 +52,6 @@ function Blog() {
     }).then(res => {
       console.log(res.data)
       if (res.data.success) {
-        console.log("this response data => ", accessData.blogs)
         localStorage.setItem("user", JSON.stringify(res.data.data))
         document.querySelector('input[type="file"]').value = null // Clear file input value
         loadLocalStorgeData()

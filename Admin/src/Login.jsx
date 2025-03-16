@@ -48,11 +48,7 @@ function Login({ setIsLogedIn }) {
                 email: email, 
                 password: password
             }).then(res => {
-                console.log(Name, username, email, password)   
-                console.log(res.data) 
                 if(res.data.success){
-                    console.log('success')
-                    console.log(res.data.data.user)
                     setCookies('accessToken', res.data.data.accessToken, { path: '/' })
                     localStorage.setItem('user', JSON.stringify(res.data.data.user))
                     loadLocalStorgeData()
@@ -67,11 +63,8 @@ function Login({ setIsLogedIn }) {
                     closePopUp()
                 }
             }).catch(err => {
-                // console.log(err.response.data)
                 alert('user all ready exist from this username and email')
             })
-            // navigate('/')
-            // closePopUp()
         }
 
     }
